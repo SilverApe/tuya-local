@@ -1,0 +1,41 @@
+name: Electric fireplace
+# Kesser KEKMH-2022, product id unknown
+entities:
+  - entity: climate
+    translation_key: heater
+    icon: "mdi:fireplace"
+    dps:
+      - id: 1
+        name: hvac_mode
+        type: boolean
+        mapping:
+          - dps_val: false
+            value: "off"
+          - dps_val: true
+            value: heat
+      - id: 2
+        name: temperature
+        type: integer
+        unit: C
+        range:
+          min: 7
+          max: 30
+      - id: 3
+        name: current_temperature
+        type: integer
+      - id: 4
+        name: preset_mode
+        type: string
+        mapping:
+          - dps_val: "off"
+            value: none
+          - dps_val: low
+            value: low
+          - dps_val: high
+            value: high
+  - entity: light
+    translation_key: flame
+    dps:
+      - id: 9
+        name: switch
+        type: boolean
